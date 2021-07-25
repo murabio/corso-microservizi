@@ -5,7 +5,6 @@ import com.example.user.entity.User;
 import com.example.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -25,6 +24,6 @@ public class UserController {
     @GetMapping("/{id}")
     public ResponseTemplateVO getUserWithDepartment(@PathVariable("id") Long userId) {
         log.info("UserController - getUserWithDepartment " + userId);
-        return userService.getUserWithDepartment(Long userId);
+        return userService.getUserWithDepartment(userId);
     }
 }

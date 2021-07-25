@@ -1,12 +1,10 @@
-package com.example.user;
+package com.example.cloud.getaway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootTest
-@EnableEurekaClient
-class UserServiceApplicationTests {
+class CloudGetawayApplicationTests {
 
 	@Test
 	void contextLoads() {
