@@ -1,0 +1,59 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:9001
+  description: Generated server url
+paths:
+  /departments/:
+    post:
+      tags:
+      - department-controller
+      operationId: saveDepartment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Department'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Department'
+  /departments/{id}:
+    get:
+      tags:
+      - department-controller
+      operationId: findDepartmentById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Department'
+components:
+  schemas:
+    Department:
+      type: object
+      properties:
+        departmentId:
+          type: integer
+          format: int64
+        departmentName:
+          type: string
+        departmentAddress:
+          type: string
+        departmentCode:
+          type: string
